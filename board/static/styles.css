@@ -186,6 +186,7 @@ form {
   #trips {
     width: 80%;
     overflow-x: scroll;
+    /* new learning */
   }
 
   #trips th,

@@ -19,11 +19,12 @@
       </nav>
     </header>
 
-  <div class="main">
+    <div class="main">
       <!-- Location Rating -->
       <div id="book">
         <form action="{{ url_for('add_trip') }}" method="post">
-          <label for="location">Where'd you go?</label>
+          <label for="location" aria-label="Where did you go on your trip?">Where'd you go?</label>
+          
           <input
             placeholder="ex: Tokoyo"
             type="text"
@@ -31,24 +32,24 @@
             name="location"
             required
           /><br /><br />
-  
-          <label for="arrival_date">Arrival Date:</label>
+
+          <label aria-lable="Date you arrived." for="arrival_date">Arrival Date:</label>
           <input
             type="date"
             id="arrival_date"
             name="arrival_date"
             required
           /><br /><br />
-  
-          <label for="departure_date">Departure Date:</label>
+
+          <label aria-label="Date you left" for="departure_date">Departure Date:</label>
           <input
             type="date"
             id="departure_date"
             name="departure_date"
             required
           /><br /><br />
-  
-          <label for="adults">Adults:</label>
+
+          <label aria-label="Amount of adults attending." for="adults">Adults:</label>
           <input
             type="number"
             id="adults"
@@ -57,8 +58,8 @@
             value="1"
             required
           /><br /><br />
-  
-          <label for="children">Children:</label>
+
+          <label aria-label="Amount of children attending." for="children">Children:</label>
           <input
             type="number"
             id="children"
@@ -66,8 +67,8 @@
             min="0"
             value="0"
           /><br /><br />
-  
-          <label for="children">Rating:</label>
+
+          <label aria-label="what you would rate the trip out of 10." for="rating">Rating:</label>
           <input
             type="number"
             id="rating"
@@ -80,7 +81,7 @@
       </div>
       <!-- put in for loop to display results add a delete ability -->
       <div id="trips">
-        <h2>All Trips</h2>
+        <h2 aria-label="Displays all trips.">All Trips</h2>
         <!-- sorting button -->
         <!-- <div>
           <button id="remove" onclick="sortTrips('oldest')">Oldest to Newest</button>  
@@ -121,6 +122,6 @@
           </tbody>
         </table>
       </div>
-  </div>
+    </div>
   </body>
 </html>
