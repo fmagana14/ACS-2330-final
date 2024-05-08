@@ -12,7 +12,10 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100%;
   margin: 0;
+  background-image: url("/static/images/bg.png");
+  background-size: 100%;
 }
 
 /* Header styles */
@@ -20,18 +23,29 @@ header {
   position: fixed; /* Position the navigation bar */
   top: 0; /* Position it at the top */
   width: 100%; /* Take up the full width of the viewport */
-  background-color: #333; /* Add background color */
-  padding: 10px 0; /* Add some padding */
+  height: 50px;
+  backdrop-filter: blur(3px);
 }
 
 header nav {
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+
+  /* margin-bottom: 10px; */
+  height: 50px;
+  font-size: 23px;
 }
 
 header nav a {
+  align-self: center;
   color: #fff;
   text-decoration: none;
   margin: 0 10px;
+}
+
+.main {
+  width: 100%;
+  display: flex;
 }
 
 /* Icon styles */
@@ -64,7 +78,7 @@ header nav a {
 
 /* Form styles */
 form {
-  margin-b: ;
+  color: #ffff;
 }
 /* Style for the trip input container */
 #book {
@@ -88,15 +102,17 @@ form {
 #book input[type="text"],
 #book input[type="date"],
 #book input[type="number"] {
+  color: white;
   margin-bottom: 10px;
   padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: none;
 }
 
 #book input[type="submit"] {
   padding: 8px 16px;
-  background-color: #007bff;
+  background-color: #0000ff;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -108,6 +124,8 @@ form {
   margin: 20px auto;
   padding: 20px;
   width: 80%;
+  min-height: 200px;
+  height: 100%;
   max-width: 800px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -115,6 +133,7 @@ form {
 
 #trips h2 {
   margin-bottom: 10px;
+  color: #ffff;
 }
 
 #trips table {
@@ -129,19 +148,52 @@ form {
   text-align: left;
 }
 
+#trips td {
+  color: #ffff;
+}
 #trips th {
   background-color: #f2f2f2;
 }
 
-#trips tbody tr:hover {
-  background-color: #f9f9f9;
-}
-
-#remove{
+#remove {
   padding: 8px 16px;
-  background-color: #007bff;
+  background-color: #ff005dfa;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#remove:hover {
+  background-color: #ef0058;
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  #trips {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  #trips {
+    width: 80%;
+    overflow-x: scroll;
+  }
+
+  #trips th,
+  td {
+    padding-right: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    flex-direction: row;
+    font-size: 12px;
+  }
 }
